@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RepairFlow</title>
+  <style>
+    body { font-family: system-ui, Arial; margin: 24px; max-width: 950px; }
+    h1 { margin-bottom: 6px; }
+    .muted { opacity: .7; font-size: 12px; margin-bottom: 18px; }
+    .row { display:flex; gap:10px; flex-wrap:wrap; }
+    input, select, button { padding: 10px; }
+    input { min-width: 180px; }
+    #problem { min-width: 280px; flex: 1; }
+    table { width: 100%; border-collapse: collapse; margin-top: 14px; }
+    th, td { border-bottom: 1px solid #ddd; padding: 10px; text-align:left; }
+    code { font-size: 12px; opacity:.8; }
+    .ok { color: #0a7; font-weight: 600; }
+    .err { color: #c33; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <h1>RepairFlow</h1>
+  <div class="muted">Frontend simples a bater no teu API (mesmo domínio). <span id="health"></span></div>
+
+  <h2>Criar reparação</h2>
+  <div class="row">
+    <input id="clientName" placeholder="Cliente" />
+    <input id="device" placeholder="Dispositivo" />
+    <input id="problem" placeholder="Problema" />
+    <button id="btnCreate">Criar</button>
+  </div>
+
+  <h2 style="margin-top:22px;">Reparações</h2>
+  <button id="btnRefresh">Atualizar lista</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th><th>Cliente</th><th>Dispositivo</th><th>Problema</th><th>Estado</th><th>Ação</th>
+      </tr>
+    </thead>
+    <tbody id="rows"></tbody>
+  </table>
+
+  <script src="./app.js"></script>
+</body>
+</html>
